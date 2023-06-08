@@ -1,0 +1,29 @@
+type: view # simple, list, create, update, delete, view
+domain: user
+endpoint: view
+method: GET
+service:
+  transactional: false
+input:
+  fields:
+    id:
+      type: string
+      source: query
+      muted: true
+      required: true
+      renamed: idd
+    foo:
+      type: string
+output:
+  kind: success
+  fields:
+    status:
+      type: string
+special:
+  filters:
+    - pageSize
+    - page
+    - query
+  sorting:
+    - createdAt
+    - name
