@@ -1,9 +1,9 @@
 <?php
 
-namespace Zabachok\Symfobooster\Response;
+namespace Symfobooster\Base\Response;
 
 use Symfony\Component\HttpFoundation\Response;
-use Zabachok\Symfobooster\Output\OutputInterface;
+use Symfobooster\Base\Output\OutputInterface;
 
 interface TransformerInterface
 {

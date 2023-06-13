@@ -1,5 +1,5 @@
 {
-  "name": "symfobooster/symfobooster",
+  "name": "symfobooster/base",
   "type": "symfony-bundle",
   "description": "Package helps to make api endpoints faster",
   "minimum-stability": "dev",
@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Zabachok\\Symfobooster\\": "src/"
+      "Symfobooster\\Base\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Zabachok\\Symfobooster\\Tests\\": "tests/"
+      "Symfobooster\\Base\\Tests\\": "tests/"
     }
   },
   "scripts": {

@@ -1,19 +1,19 @@
 <?php
 
-namespace Zabachok\Symfobooster\Controller;
+namespace Symfobooster\Base\Controller;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
-use Zabachok\Symfobooster\Input\Exception\InvalidInputException;
-use Zabachok\Symfobooster\Input\InputLoader;
-use Zabachok\Symfobooster\Output\Error;
-use Zabachok\Symfobooster\Output\Invalid;
-use Zabachok\Symfobooster\Output\OutputInterface;
-use Zabachok\Symfobooster\Response\JsonTransformer;
-use Zabachok\Symfobooster\Service\ServiceInterface;
+use Symfobooster\Base\Input\Exception\InvalidInputException;
+use Symfobooster\Base\Input\InputLoader;
+use Symfobooster\Base\Output\Error;
+use Symfobooster\Base\Output\Invalid;
+use Symfobooster\Base\Output\OutputInterface;
+use Symfobooster\Base\Response\JsonTransformer;
+use Symfobooster\Base\Service\ServiceInterface;
 
 class SingleController implements LoggerAwareInterface
 {

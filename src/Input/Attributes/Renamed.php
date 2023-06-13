@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input\Attributes;
+namespace Symfobooster\Base\Input\Attributes;
 
 use Attribute;
 

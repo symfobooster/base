@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input;
+namespace Symfobooster\Base\Input;
 
 use ReflectionAttribute;
 use ReflectionClass;
@@ -8,12 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-use Zabachok\Symfobooster\Hydrator;
-use Zabachok\Symfobooster\Input\Attributes\Muted;
-use Zabachok\Symfobooster\Input\Attributes\Renamed;
-use Zabachok\Symfobooster\Input\Attributes\Source;
-use Zabachok\Symfobooster\Input\Exception\InvalidInputException;
-use Zabachok\Symfobooster\Input\Extractor\ExtractorFactory;
+use Symfobooster\Base\Hydrator;
+use Symfobooster\Base\Input\Attributes\Muted;
+use Symfobooster\Base\Input\Attributes\Renamed;
+use Symfobooster\Base\Input\Attributes\Source;
+use Symfobooster\Base\Input\Exception\InvalidInputException;
+use Symfobooster\Base\Input\Extractor\ExtractorFactory;
 
 class InputLoader
 {

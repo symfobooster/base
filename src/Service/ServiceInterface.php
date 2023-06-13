@@ -1,9 +1,9 @@
 <?php
 
-namespace Zabachok\Symfobooster\Service;
+namespace Symfobooster\Base\Service;
 
-use Zabachok\Symfobooster\Input\InputInterface;
-use Zabachok\Symfobooster\Output\OutputInterface;
+use Symfobooster\Base\Input\InputInterface;
+use Symfobooster\Base\Output\OutputInterface;
 
 interface ServiceInterface
 {

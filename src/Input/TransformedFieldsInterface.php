@@ -1,8 +1,8 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input;
+namespace Symfobooster\Base\Input;
 
-use Zabachok\Symfobooster\Input\Transformer\TransformerCollection;
+use Symfobooster\Base\Input\Transformer\TransformerCollection;
 
 interface TransformedFieldsInterface
 {

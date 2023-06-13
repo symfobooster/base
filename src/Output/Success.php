@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Output;
+namespace Symfobooster\Base\Output;
 
 class Success implements OutputInterface
 {

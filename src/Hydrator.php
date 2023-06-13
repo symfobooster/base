@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster;
+namespace Symfobooster\Base;
 
 use ReflectionClass;
 

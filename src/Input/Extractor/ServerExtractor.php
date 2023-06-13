@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input\Extractor;
+namespace Symfobooster\Base\Input\Extractor;
 
 use Symfony\Component\HttpFoundation\Request;
 

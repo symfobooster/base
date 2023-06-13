@@ -1,8 +1,8 @@
 <?php
 
-namespace Zabachok\Symfobooster\DataProvider;
+namespace Symfobooster\Base\DataProvider;
 
-use Zabachok\Symfobooster\Input\InputInterface;
+use Symfobooster\Base\Input\InputInterface;
 
 abstract class AbstractFilter implements FilterInterface
 {

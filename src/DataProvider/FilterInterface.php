@@ -1,9 +1,9 @@
 <?php
 
-namespace Zabachok\Symfobooster\DataProvider;
+namespace Symfobooster\Base\DataProvider;
 
 use Doctrine\ORM\QueryBuilder;
-use Zabachok\Symfobooster\Input\InputInterface;
+use Symfobooster\Base\Input\InputInterface;
 
 interface FilterInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input\Transformer\Exception;
+namespace Symfobooster\Base\Input\Transformer\Exception;
 
 use Exception;
 

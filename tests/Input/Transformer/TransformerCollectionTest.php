@@ -1,14 +1,14 @@
 <?php
 
-namespace Zabachok\Symfobooster\Tests\Input\Transformer;
+namespace Symfobooster\Base\Tests\Input\Transformer;
 
 use PHPUnit\Framework\TestCase;
-use Zabachok\Symfobooster\Input\Transformer\CallbackTransformer;
-use Zabachok\Symfobooster\Input\Transformer\Exception\InvalidTransformerException;
-use Zabachok\Symfobooster\Input\Transformer\Exception\TransformersNotFoundException;
-use Zabachok\Symfobooster\Input\Transformer\ExplodeTransformer;
-use Zabachok\Symfobooster\Input\Transformer\TransformerCollection;
-use Zabachok\Symfobooster\Input\Transformer\TrimTransformer;
+use Symfobooster\Base\Input\Transformer\CallbackTransformer;
+use Symfobooster\Base\Input\Transformer\Exception\InvalidTransformerException;
+use Symfobooster\Base\Input\Transformer\Exception\TransformersNotFoundException;
+use Symfobooster\Base\Input\Transformer\ExplodeTransformer;
+use Symfobooster\Base\Input\Transformer\TransformerCollection;
+use Symfobooster\Base\Input\Transformer\TrimTransformer;
 
 class TransformerCollectionTest extends TestCase
 {

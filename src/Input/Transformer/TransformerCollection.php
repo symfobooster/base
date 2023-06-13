@@ -1,9 +1,9 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input\Transformer;
+namespace Symfobooster\Base\Input\Transformer;
 
-use Zabachok\Symfobooster\Input\Transformer\Exception\InvalidTransformerException;
-use Zabachok\Symfobooster\Input\Transformer\Exception\TransformersNotFoundException;
+use Symfobooster\Base\Input\Transformer\Exception\InvalidTransformerException;
+use Symfobooster\Base\Input\Transformer\Exception\TransformersNotFoundException;
 
 class TransformerCollection
 {

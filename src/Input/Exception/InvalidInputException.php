@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input\Exception;
+namespace Symfobooster\Base\Input\Exception;
 
 use Exception;
 use Symfony\Component\Validator\ConstraintViolationListInterface;

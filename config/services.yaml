@@ -4,36 +4,36 @@ services:
     autoconfigure: true
 
   symfobooster.controller:
-    class: Zabachok\Symfobooster\Controller\SingleController
+    class: Symfobooster\Base\Controller\SingleController
 #    public: true
     arguments:
       $transformer: '@symfobooster.controller.transformer.json'
 
   symfobooster.controller.transformer.json:
-    class: Zabachok\Symfobooster\Response\JsonTransformer
+    class: Symfobooster\Base\Response\JsonTransformer
     arguments:
       $serializer: '@serializer'
 
   symfobooster.input.loader:
-    class: Zabachok\Symfobooster\Input\InputLoader
+    class: Symfobooster\Base\Input\InputLoader
     arguments:
       $extractorFactory: '@symfobooster.input.extractorFactory'
 
   symfobooster.input.extractorFactory:
-    class: Zabachok\Symfobooster\Input\Extractor\ExtractorFactory
+    class: Symfobooster\Base\Input\Extractor\ExtractorFactory
     arguments:
       $extractors:
         query: '@symfobooster.input.extractors.query'
         body: '@symfobooster.input.extractors.body'
 
   symfobooster.input.extractors.body:
-    class: Zabachok\Symfobooster\Input\Extractor\BodyExtractor
+    class: Symfobooster\Base\Input\Extractor\BodyExtractor
 
   symfobooster.input.extractors.query:
-    class: Zabachok\Symfobooster\Input\Extractor\QueryExtractor
+    class: Symfobooster\Base\Input\Extractor\QueryExtractor
 
   symfobooster.input.transformer.explode:
-    class: Zabachok\Symfobooster\Input\Transformer\ExplodeTransformer
+    class: Symfobooster\Base\Input\Transformer\ExplodeTransformer
 
   symfobooster.input.transformer.trim:
-    class: Zabachok\Symfobooster\Input\Transformer\TrimTransformer
+    class: Symfobooster\Base\Input\Transformer\TrimTransformer

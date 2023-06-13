@@ -1,9 +1,9 @@
 <?php
 
-namespace Zabachok\Symfobooster\Tests\Input\Transformer;
+namespace Symfobooster\Base\Tests\Input\Transformer;
 
 use PHPUnit\Framework\TestCase;
-use Zabachok\Symfobooster\Input\Transformer\ExplodeTransformer;
+use Symfobooster\Base\Input\Transformer\ExplodeTransformer;
 
 class ExplodeTransformerTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input;
+namespace Symfobooster\Base\Input;
 
 use Symfony\Component\Validator\Constraint;
 

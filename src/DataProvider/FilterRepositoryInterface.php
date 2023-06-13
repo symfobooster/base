@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\DataProvider;
+namespace Symfobooster\Base\DataProvider;
 
 interface FilterRepositoryInterface
 {

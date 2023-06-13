@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Test;
+namespace Symfobooster\Base\Test;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -18,7 +18,7 @@
 namespace App\User\Registration;
 
 use Symfony\Component\Validator\Constraint;
-use Zabachok\Symfobooster\Input\InputInterface;
+use Symfobooster\Base\Input\InputInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class RegistrationInput implements InputInterface
@@ -48,7 +48,7 @@ class RegistrationInput implements InputInterface
 ## Источники данных
 Если метод GET, то по умолчанию данные берутся из гет-параметров. В остальных случаях данные берутся из тела запроса. 
 Если в конкреном случае вам подходит такая логика, то вы можете не указывать источник.  
-Если источние по-умолчанию не подходит, то вы можете использовать аннтацию `Zabachok\Symfobooster\Input\Attributes\Source` и указать его явно.
+Если источние по-умолчанию не подходит, то вы можете использовать аннтацию `Symfobooster\Base\Input\Attributes\Source` и указать его явно.
 В примере ниже мы получаем поле из суперглобального массива _COOKIE.
 ```php
     #[Source('query')]
@@ -57,7 +57,7 @@ class RegistrationInput implements InputInterface
 
 ## Переименование полей
 Переименование полей позволяет разорвать связь между входящими полями и их названиями используемыми в коде.
-Аннотация `Zabachok\Symfobooster\Input\Attributes\Renamed` позволяет указать название поле из входящих данных.
+Аннотация `Symfobooster\Base\Input\Attributes\Renamed` позволяет указать название поле из входящих данных.
 В примере ниже мы берём куку, которая назвается `_ga` и кладём в поле `$googleId`.
 ```php 
     #[Source('cookie')]
@@ -67,7 +67,7 @@ class RegistrationInput implements InputInterface
 Эта функция полезна при работе с суперглобальными массивом _SERVER, с куками, с заголовками.
 
 ## Подавление ошибок валидации
-Бывает необходимо скрыть ошибки валидации для некоторых полей от клиента. Для этого необходимо использовать аннотацию `Zabachok\Symfobooster\Input\Attributes\Muted`.
+Бывает необходимо скрыть ошибки валидации для некоторых полей от клиента. Для этого необходимо использовать аннотацию `Symfobooster\Base\Input\Attributes\Muted`.
 Благодаря ей если поле не прошло валидацию будет выдан код 400, но в ответе не будет сообщения о валидации для этого поля.
 ```php 
     #[Source('server')]

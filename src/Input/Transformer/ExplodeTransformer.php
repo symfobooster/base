@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\Input\Transformer;
+namespace Symfobooster\Base\Input\Transformer;
 
 class ExplodeTransformer implements TransformerInterface
 {

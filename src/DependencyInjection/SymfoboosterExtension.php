@@ -1,6 +1,6 @@
 <?php
 
-namespace Zabachok\Symfobooster\DependencyInjection;
+namespace Symfobooster\Base\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

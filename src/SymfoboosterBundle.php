@@ -1,10 +1,10 @@
 <?php
 
-namespace Zabachok\Symfobooster;
+namespace Symfobooster\Base;
 
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
-use Zabachok\Symfobooster\DependencyInjection\SymfoboosterExtension;
+use Symfobooster\Base\DependencyInjection\SymfoboosterExtension;
 
 class SymfoboosterBundle extends AbstractBundle
 {
