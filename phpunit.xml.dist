@@ -5,7 +5,7 @@
       <directory>./</directory>
     </include>
     <exclude>
-      <directory>./Tests</directory>
+      <directory>./tests</directory>
       <directory>./vendor</directory>
     </exclude>
   </coverage>
@@ -14,7 +14,7 @@
   </php>
   <testsuites>
     <testsuite name="Symfobooster Test Suite">
-      <directory>./Tests/</directory>
+      <directory>./tests/</directory>
     </testsuite>
   </testsuites>
 </phpunit>
