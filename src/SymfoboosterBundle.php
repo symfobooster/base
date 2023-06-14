@@ -12,8 +12,4 @@ class SymfoboosterBundle extends AbstractBundle
     {
         return new SymfoboosterExtension();
     }
-//    public function getPath(): string
-//    {
-//        return dirname(__DIR__);
-//    }
 }
