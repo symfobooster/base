@@ -2,22 +2,17 @@
 
 namespace Symfobooster\Base\Output;
 
+use Symfobooster\Base\Output\Attributes\NotFoundMarker;
+
+#[NotFoundMarker]
 class NotFound implements OutputInterface
 {
-    private string $message;
+    public string $message;
 
-    public function __construct(string $message = 'Not found')
+    public function __construct(?string $message = null)
     {
-        $this->message = $message;
-    }
-
-    public function getData(): array|object|string|null
-    {
-        return $this->message;
-    }
-
-    public function getCode(): int
-    {
-        return 404;
+        if (!is_null($message)) {
+            $this->message = $message;
+        }
     }
 }

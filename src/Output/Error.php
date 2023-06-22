@@ -2,31 +2,24 @@
 
 namespace Symfobooster\Base\Output;
 
+use Symfobooster\Base\Output\Attributes\ErrorMarker;
 use Throwable;
 
+#[ErrorMarker]
 class Error implements OutputInterface
 {
-    private Throwable $exception;
+    public string $class;
+    public string $message;
+    public string $file;
+    public int $line;
+    public array $trace;
 
     public function __construct(Throwable $exception)
     {
-        $this->exception = $exception;
-    }
-
-    public function getData(): array|object|string|null
-    {
-        return [
-            'class' => get_class($this->exception),
-            'message' => $this->exception->getMessage(),
-            'file' => $this->exception->getFile(),
-            'line' => $this->exception->getLine(),
-            'trace' => $this->exception->getTrace(),
-        ];
-        // TODO Add hiding data for production
-    }
-
-    public function getCode(): int
-    {
-        return 500;
+        $this->class = get_class($exception);
+        $this->message = $exception->getMessage();
+        $this->file = $exception->getFile();
+        $this->line = $exception->getLine();
+        $this->trace = $exception->getTrace();
     }
 }

@@ -2,15 +2,9 @@
 
 namespace Symfobooster\Base\Output;
 
+use Symfobooster\Base\Output\Attributes\CreatedMarker;
+
+#[CreatedMarker]
 class Created implements OutputInterface
 {
-    public function getData(): array|object|string|null
-    {
-        return null;
-    }
-
-    public function getCode(): int
-    {
-        return 204;
-    }
 }
