@@ -4,7 +4,6 @@ namespace Symfobooster\Base\Response;
 
 use ReflectionClass;
 use Symfobooster\Base\Output\Attributes\OutputMarker;
-use Symfobooster\Base\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -20,7 +19,7 @@ class JsonTransformer implements TransformerInterface
         $this->statuses = $statuses;
     }
 
-    public function transform(OutputInterface $output): Response
+    public function transform(mixed $output): Response
     {
         return new JsonResponse(
             $this->serializer->serialize($output, 'json'),
@@ -30,7 +29,7 @@ class JsonTransformer implements TransformerInterface
         );
     }
 
-    private function getStatus(OutputInterface $output): int
+    private function getStatus(mixed $output): int
     {
         $reflection = new ReflectionClass(get_class($output));
         foreach ($reflection->getAttributes() as $attribute) {

@@ -5,7 +5,7 @@ namespace Symfobooster\Base\Output;
 use Symfobooster\Base\Output\Attributes\NotFoundMarker;
 
 #[NotFoundMarker]
-class NotFound implements OutputInterface
+class NotFound
 {
     public string $message;
 

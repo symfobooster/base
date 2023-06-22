@@ -6,7 +6,7 @@ use Symfobooster\Base\Output\Attributes\ErrorMarker;
 use Throwable;
 
 #[ErrorMarker]
-class Error implements OutputInterface
+class Error
 {
     public string $class;
     public string $message;

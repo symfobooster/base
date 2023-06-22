@@ -11,7 +11,6 @@ use Symfobooster\Base\Input\Exception\InvalidInputException;
 use Symfobooster\Base\Input\InputLoader;
 use Symfobooster\Base\Output\Error;
 use Symfobooster\Base\Output\Invalid;
-use Symfobooster\Base\Output\OutputInterface;
 use Symfobooster\Base\Response\JsonTransformer;
 use Symfobooster\Base\Service\ServiceInterface;
 
@@ -37,7 +36,7 @@ class SingleController implements LoggerAwareInterface
         );
     }
 
-    private function getOutput(Request $request): OutputInterface
+    private function getOutput(Request $request): mixed
     {
         try {
             $input = $this->inputLoader->fromRequest($request);
