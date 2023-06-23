@@ -4,16 +4,16 @@ namespace Symfobooster\Base\Input;
 
 use ReflectionAttribute;
 use ReflectionClass;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\ConstraintViolation;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfobooster\Base\Hydrator;
 use Symfobooster\Base\Input\Attributes\Muted;
 use Symfobooster\Base\Input\Attributes\Renamed;
 use Symfobooster\Base\Input\Attributes\Source;
 use Symfobooster\Base\Input\Exception\InvalidInputException;
 use Symfobooster\Base\Input\Extractor\ExtractorFactory;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\ConstraintViolation;
+use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class InputLoader
 {

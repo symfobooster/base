@@ -22,15 +22,6 @@ class TransformerCollection
         }
     }
 
-    public function getTransformersByField(string $field): array
-    {
-        if (array_key_exists($field, $this->collection)) {
-            return $this->collection[$field];
-        }
-
-        throw new TransformersNotFoundException('Transformers not found for this field');
-    }
-
     private function addTransformers(string $field, array $transformers): void
     {
         foreach ($transformers as $transformer) {
@@ -48,5 +39,14 @@ class TransformerCollection
         }
 
         $this->collection[$field][] = $transformer;
+    }
+
+    public function getTransformersByField(string $field): array
+    {
+        if (array_key_exists($field, $this->collection)) {
+            return $this->collection[$field];
+        }
+
+        throw new TransformersNotFoundException('Transformers not found for this field');
     }
 }
