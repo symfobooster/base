@@ -4,13 +4,15 @@ namespace Symfobooster\Base\Input;
 
 use ReflectionAttribute;
 use ReflectionClass;
-use Symfobooster\Base\Hydrator;
 use Symfobooster\Base\Input\Attributes\Muted;
 use Symfobooster\Base\Input\Attributes\Renamed;
 use Symfobooster\Base\Input\Attributes\Source;
 use Symfobooster\Base\Input\Exception\InvalidInputException;
 use Symfobooster\Base\Input\Extractor\ExtractorFactory;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -47,10 +49,10 @@ class InputLoader
             throw new InvalidInputException($this->filterViolations($violations));
         }
 
-        $hydrator = new Hydrator();
-        $hydrator->hydrate($this->input, $data);
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+        $serializer = new Serializer([$normalizer]);
 
-        return $this->input;
+        return $serializer->denormalize($data, get_class($this->input));
     }
 
     private function exploreInput(string $method): void
