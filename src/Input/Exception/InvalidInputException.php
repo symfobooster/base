@@ -19,4 +19,14 @@ class InvalidInputException extends Exception
     {
         return $this->violationList;
     }
+
+    public function __toString(): string
+    {
+        $messages = [];
+        foreach ($this->violationList as $violation) {
+            $messages[] = $violation->getPropertyPath() . ': ' . $violation->getMessage();
+        }
+
+        return implode("\n", $messages);
+    }
 }

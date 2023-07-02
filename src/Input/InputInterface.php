@@ -6,5 +6,5 @@ use Symfony\Component\Validator\Constraint;
 
 interface InputInterface
 {
-    public function getValidators(): Constraint;
+    public static function getValidators(): Constraint;
 }
