@@ -18,9 +18,9 @@ class SingleController implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
-    private InputLoader $inputLoader;
-    private ServiceInterface $service;
-    private JsonTransformer $transformer;
+    protected InputLoader $inputLoader;
+    protected ServiceInterface $service;
+    protected JsonTransformer $transformer;
 
     public function __construct(InputLoader $inputLoader, ServiceInterface $service, JsonTransformer $transformer)
     {

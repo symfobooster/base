@@ -10,6 +10,10 @@ class BodyExtractor implements ExtractorInterface
 
     public function extract(Request $request, string $name): mixed
     {
+        if ($request->getContentTypeFormat() === 'form') {
+            return $request->getPayload()->get($name);
+        }
+
         if (empty($this->content)) {
             $this->content = json_decode((string)$request->getContent(), true);
         }

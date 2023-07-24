@@ -43,16 +43,25 @@ class InputLoader
     {
         $this->exploreInput($request->getMethod());
         $data = $this->extractData($request);
-
         $violations = $this->validator->validate($data, $this->input->getValidators());
         if (count($violations) > 0) {
             throw new InvalidInputException($this->filterViolations($violations));
         }
-
         $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
-        $serializer = new Serializer([$normalizer]);
+        $serializer = new Serializer([$normalizer, new GetSetMethodNormalizer()]);
+        $fileFields = [];
+        foreach ($data as $key => $field) {
+            if ($data[$key] instanceof UploadedFile) {
+                $fileFields[$key] = $field;
+                unset($data[$key]);
+            }
+        }
+        $input = $serializer->denormalize($data, get_class($this->input));
+        foreach ($fileFields as $key => $field) {
+            $input->{$key} = $field;
+        }
 
-        return $serializer->denormalize($data, get_class($this->input));
+        return $input;
     }
 
     private function exploreInput(string $method): void
@@ -83,7 +92,7 @@ class InputLoader
     private function getSource(string $method, ?ReflectionAttribute $attribute): string
     {
         if (is_null($attribute)) {
-            return $method === 'GET' ? 'query' : 'body';
+            return in_array($method, ['GET', 'DELETE']) ? 'query' : 'body';
         }
 
         return $attribute->newInstance()->source;

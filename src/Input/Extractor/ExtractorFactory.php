@@ -13,6 +13,9 @@ class ExtractorFactory
 
     public function getExtractor(string $name): ExtractorInterface
     {
+        if (!array_key_exists($name, $this->extractors)) {
+            throw new \Exception('Undefined extractor');
+        }
         return $this->extractors[$name];
     }
 }

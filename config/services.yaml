@@ -31,15 +31,22 @@ services:
       $extractors:
         query: '@symfobooster.input.extractors.query'
         body: '@symfobooster.input.extractors.body'
+        file: '@symfobooster.input.extractors.file'
+        header: '@symfobooster.input.extractors.header'
+        server: '@symfobooster.input.extractors.server'
 
   symfobooster.input.extractors.body:
     class: Symfobooster\Base\Input\Extractor\BodyExtractor
-
   symfobooster.input.extractors.query:
     class: Symfobooster\Base\Input\Extractor\QueryExtractor
+  symfobooster.input.extractors.file:
+    class: Symfobooster\Base\Input\Extractor\FileExtractor
+  symfobooster.input.extractors.header:
+    class: Symfobooster\Base\Input\Extractor\HeaderExtractor
+  symfobooster.input.extractors.server:
+    class: Symfobooster\Base\Input\Extractor\ServerExtractor
 
   symfobooster.input.transformer.explode:
     class: Symfobooster\Base\Input\Transformer\ExplodeTransformer
-
   symfobooster.input.transformer.trim:
     class: Symfobooster\Base\Input\Transformer\TrimTransformer
