@@ -7,5 +7,4 @@ use Symfobooster\Base\Output\Attributes\DeniedMarker;
 #[DeniedMarker]
 class Denied
 {
-
 }

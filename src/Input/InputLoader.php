@@ -9,6 +9,7 @@ use Symfobooster\Base\Input\Attributes\Renamed;
 use Symfobooster\Base\Input\Attributes\Source;
 use Symfobooster\Base\Input\Exception\InvalidInputException;
 use Symfobooster\Base\Input\Extractor\ExtractorFactory;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -19,9 +20,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class InputLoader
 {
-    private InputInterface $input;
-    private ExtractorFactory $extractorFactory;
-    private ValidatorInterface $validator;
     private array $fields = [];
     private array $muted = [];
     private array $renamed = [];
@@ -30,13 +28,10 @@ class InputLoader
 //    private array $transformers = [];
 
     public function __construct(
-        InputInterface $input,
-        ExtractorFactory $extractorFactory,
-        ValidatorInterface $validator
+        private InputInterface $input,
+        private ExtractorFactory $extractorFactory,
+        private ValidatorInterface $validator
     ) {
-        $this->input = $input;
-        $this->extractorFactory = $extractorFactory;
-        $this->validator = $validator;
     }
 
     public function fromRequest(Request $request): InputInterface
@@ -48,7 +43,7 @@ class InputLoader
             throw new InvalidInputException($this->filterViolations($violations));
         }
         $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
-        $serializer = new Serializer([$normalizer, new GetSetMethodNormalizer()]);
+        $serializer = new Serializer([$normalizer]);
         $fileFields = [];
         foreach ($data as $key => $field) {
             if ($data[$key] instanceof UploadedFile) {
