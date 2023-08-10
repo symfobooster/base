@@ -2,7 +2,7 @@
 
 namespace Symfobooster\Base\Output;
 
-class CreatedString extends Created
+class CreatedIdString extends Created
 {
     public string $id;
 
