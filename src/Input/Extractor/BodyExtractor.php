@@ -15,7 +15,12 @@ class BodyExtractor implements ExtractorInterface
         }
 
         if (empty($this->content)) {
-            $this->content = json_decode((string)$request->getContent(), true);
+            $content = $request->getContent();
+            if (empty($content)) {
+                $this->content = [];
+            } else {
+                $this->content = json_decode((string)$request->getContent(), true);
+            }
         }
         return $this->content[$name] ?? null;
     }
