@@ -50,3 +50,8 @@ services:
     class: Symfobooster\Base\Input\Transformer\ExplodeTransformer
   symfobooster.input.transformer.trim:
     class: Symfobooster\Base\Input\Transformer\TrimTransformer
+
+  symfobooster.data_provider.filter.page:
+    class: Symfobooster\Base\DataProvider\Filter\PageFilter
+  symfobooster.data_provider.filter.page_size:
+    class: Symfobooster\Base\DataProvider\Filter\PageSizeFilter
