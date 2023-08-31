@@ -18,8 +18,7 @@ class FilterEnum implements FilterEnumInterface
     public function __construct(
         private readonly array $filtersForRecords = [],
         private readonly array $filtersForTotal = [],
-    )
-    {
+    ) {
     }
 
     public function getFiltersForRecords(): array
