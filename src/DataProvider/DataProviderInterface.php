@@ -2,13 +2,15 @@
 
 namespace Symfobooster\Base\DataProvider;
 
+
 use Symfobooster\Base\Input\InputInterface;
 
-interface FilterInterface
+interface DataProviderInterface
 {
-    public function setQuery(mixed $query): void;
+    public function getRecords(): array;
 
-    public function isApplicable(): bool;
+    public function getTotal(): int;
 
     public function setInput(InputInterface $input): void;
 }
+ 
