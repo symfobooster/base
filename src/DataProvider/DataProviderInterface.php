@@ -12,4 +12,3 @@ interface DataProviderInterface
 
     public function setInput(InputInterface $input): void;
 }
- 
