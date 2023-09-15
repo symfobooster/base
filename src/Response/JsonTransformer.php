@@ -10,21 +10,19 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class JsonTransformer implements TransformerInterface
 {
-    private SerializerInterface $serializer;
-    private array $statuses;
-
-    public function __construct(SerializerInterface $serializer, array $statuses)
-    {
-        $this->serializer = $serializer;
-        $this->statuses = $statuses;
+    public function __construct(
+        private SerializerInterface $serializer,
+        private string $environment
+    ) {
     }
 
     public function transform(mixed $output): Response
     {
+        $status = $this->getStatus($output);
+
         return new JsonResponse(
-            $this->serializer->serialize($output, 'json'),
-            $this->getStatus($output),
-            [],
+            $this->isDisableOutput($status) ? '' : $this->serializer->serialize($output, 'json'),
+            $status, [],
             true
         );
     }
@@ -40,5 +38,10 @@ class JsonTransformer implements TransformerInterface
         }
 
         return 500;
+    }
+
+    private function isDisableOutput(int $status): bool
+    {
+        return $status >= 500 && $this->environment === 'prod';
     }
 }

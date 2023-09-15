@@ -13,12 +13,7 @@ services:
     class: Symfobooster\Base\Response\JsonTransformer
     arguments:
       $serializer: '@serializer'
-      $statuses:
-        Symfobooster\Base\Output\Success: 200
-        Symfobooster\Base\Output\Created: 204
-        Symfobooster\Base\Output\Invalid: 400
-        Symfobooster\Base\Output\NotFound: 405
-        Symfobooster\Base\Output\Error: 500
+      $environment: '%env(resolve:APP_ENV)%'
 
   symfobooster.input.loader:
     class: Symfobooster\Base\Input\InputLoader
