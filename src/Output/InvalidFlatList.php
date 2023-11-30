@@ -7,7 +7,7 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 #[BadRequestMarker]
-class Invalid
+class InvalidFlatList
 {
     public array $fields = [];
 
