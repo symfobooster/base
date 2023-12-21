@@ -13,6 +13,7 @@ class Invalid
 
     public function __construct(ConstraintViolationListInterface $violationList)
     {
+        $messages = [];
         foreach ($violationList as $violation) {
             /** @var ConstraintViolationInterface $violation */
             $field = substr($violation->getPropertyPath(), 1, -1);
