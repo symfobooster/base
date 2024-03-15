@@ -45,6 +45,7 @@ class SingleController implements LoggerAwareInterface
         } catch (InvalidInputException $exception) {
             return new Invalid($exception->getViolationList());
         } catch (Throwable $exception) {
+            $this->logger->error($exception);
             return new Error($exception);
         }
     }

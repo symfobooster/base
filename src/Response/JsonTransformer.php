@@ -22,7 +22,8 @@ class JsonTransformer implements TransformerInterface
 
         return new JsonResponse(
             $this->isDisableOutput($status) ? '' : $this->serializer->serialize($output, 'json'),
-            $status, [],
+            $status,
+            [],
             true
         );
     }
