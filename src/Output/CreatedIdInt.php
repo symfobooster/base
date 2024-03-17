@@ -2,12 +2,12 @@
 
 namespace Symfobooster\Base\Output;
 
+use Symfobooster\Base\Output\Attributes\CreatedMarker;
+
+#[CreatedMarker]
 class CreatedIdInt extends Created
 {
-    public int $id;
-
-    public function __construct(int $id)
+    public function __construct(public int $id)
     {
-        $this->id = $id;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Symfobooster\Base\Input\Extractor;
 
+use Symfobooster\Base\Input\Exception\InvalidBodyException;
 use Symfony\Component\HttpFoundation\Request;
 
 class BodyExtractor implements ExtractorInterface
@@ -19,7 +20,11 @@ class BodyExtractor implements ExtractorInterface
             if (empty($content)) {
                 $this->content = [];
             } else {
-                $this->content = json_decode((string)$request->getContent(), true);
+                $content = json_decode((string)$request->getContent(), true);
+                if ($content === null) {
+                    throw new InvalidBodyException();
+                }
+                $this->content = $content;
             }
         }
         return $this->content[$name] ?? null;

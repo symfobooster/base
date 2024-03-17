@@ -4,6 +4,8 @@ namespace Symfobooster\Base\Controller;
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use Symfobooster\Base\Input\Exception\InvalidBodyException;
+use Symfobooster\Base\Output\BadRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -44,6 +46,8 @@ class SingleController implements LoggerAwareInterface
             return $this->service->behave($input);
         } catch (InvalidInputException $exception) {
             return new Invalid($exception->getViolationList());
+        } catch (InvalidBodyException $exception) {
+            return new BadRequest();
         } catch (Throwable $exception) {
             $this->logger->error($exception);
             return new Error($exception);

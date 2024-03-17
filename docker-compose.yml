@@ -3,7 +3,7 @@ services:
   symfobooster-base-test:
     image: composer:2.7.2
     container_name: symfobooster-base-test
-    command: /bin/sh -c "composer install && composer test && composer lint"
+    command: /bin/sh -c "composer install && ./vendor/bin/phpunit && composer lint"
     volumes:
       - .:/app:delegated
     working_dir: /app
